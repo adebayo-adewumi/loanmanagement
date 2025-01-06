@@ -12,6 +12,7 @@ Loan Management is a web application for disbursing fast loans.
 - Clone the repo to any location on your PC i.e git clone https://github.com/adebayo-adewumi/loanmanagement.git
 - Open the project with you desired IDE
 - Run the application.
+- DB migration files are in src/main/db/migraion folder
 
 ### Implementation Details
 - Database Migration using Flyway
