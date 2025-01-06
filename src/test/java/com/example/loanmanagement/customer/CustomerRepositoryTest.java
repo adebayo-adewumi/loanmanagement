@@ -20,6 +20,7 @@ public class CustomerRepositoryTest {
                 .firstname("Adebola")
                 .lastname("Segun")
                 .phone("Segun")
+                .email("b@b.com")
                 .build();
 
         repository.save(customer);
