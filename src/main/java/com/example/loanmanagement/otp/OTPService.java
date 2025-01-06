@@ -27,6 +27,7 @@ public class OTPService {
 
         var otp = OTP.builder()
                 .phone(request.getPhone())
+                .expiry_date(LocalDateTime.now().plusMinutes(5))
                 .otp(passwordEncoder.encode("123456"))
                 .build();
 

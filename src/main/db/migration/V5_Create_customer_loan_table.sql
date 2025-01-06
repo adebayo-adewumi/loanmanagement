@@ -5,7 +5,7 @@ CREATE TABLE customer_loan (
    status TEXT NULL,
    repayment_date TIMESTAMP NULL,
    repayment_amount DECIMAL(10, 2) NULL,
-   validity INTEGER NULL,
+   tenure INTEGER NULL,
    processed_by UUID NULL,
    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
    updated_at TIMESTAMP NULL

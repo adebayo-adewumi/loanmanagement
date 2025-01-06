@@ -23,4 +23,9 @@ public class OTP {
     private LocalDateTime expiry_date;
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
+
+    @PrePersist
+    public void prePersist() {
+        this.created_at = LocalDateTime.now();
+    }
 }
