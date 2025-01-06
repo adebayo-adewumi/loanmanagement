@@ -20,6 +20,7 @@ Loan Management is a web application for disbursing fast loans.
 - Healthcheck
 - JWT Authentication
 - Rate Limiting
+- Audit & Error Logging
 
 ### Design Decision
 This application was built using Spring Boot Modulith approach. 
