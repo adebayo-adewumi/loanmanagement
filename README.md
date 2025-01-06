@@ -19,6 +19,7 @@ Loan Management is a web application for disbursing fast loans.
 - Unit Test and Mocking (JUNIT & Mockito)
 - Healthcheck
 - JWT Authentication
+- Rate Limiting
 
 ### Design Decision
 This application was built using Spring Boot Modulith approach. 
