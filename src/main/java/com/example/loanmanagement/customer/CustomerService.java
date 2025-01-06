@@ -17,6 +17,8 @@ import java.util.UUID;
 public class CustomerService {
 
     private final ICustomerRepository repository;
+    private final IContactRepository contactRepository;
+    private final IEmployerRepository employerRepository;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationService authService;
     private final AuthenticationManager authenticationManager;
@@ -117,6 +119,59 @@ public class CustomerService {
         return GenericResponse.builder()
                 .code(200)
                 .message("Account deleted successfully")
+                .build();
+    }
+
+    public GenericResponse addContacts(ContactRequest request){
+        var customer = repository.findByCustomerId(request.getCustomer_id());
+
+        if(customer == null) {
+            return GenericResponse.builder()
+                    .code(403)
+                    .message("Customer not found")
+                    .build();
+        }
+
+        var contact = Contact.builder()
+                .customer_id(customer.getId())
+                .name(request.getName())
+                .phone(request.getPhone())
+                .relationship(request.getRelationship())
+                .build();
+
+        contactRepository.save(contact);
+
+        return GenericResponse.builder()
+                .code(200)
+                .message("Contact added successfully")
+                .build();
+    }
+
+    public GenericResponse addEmployer(EmployerRequest request){
+        var customer = repository.findByCustomerId(request.getCustomer_id());
+
+        if(customer == null) {
+            return GenericResponse.builder()
+                    .code(403)
+                    .message("Customer not found")
+                    .build();
+        }
+
+        var employer = Employer.builder()
+                .customer_id(customer.getId())
+                .name(request.getName())
+                .phone(request.getPhone())
+                .email(request.getPhone())
+                .address(request.getAddress())
+                .city(request.getCity())
+                .state(request.getState())
+                .build();
+
+        employerRepository.save(employer);
+
+        return GenericResponse.builder()
+                .code(200)
+                .message("Contact added successfully")
                 .build();
     }
 }
