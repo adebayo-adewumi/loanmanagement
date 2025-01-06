@@ -1,4 +1,4 @@
-CREATE TABLE customer_bank_details (
+CREATE TABLE bank_details (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   customer_id UUID NULL,
   bank TEXT NULL,

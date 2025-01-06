@@ -1,4 +1,4 @@
-CREATE TABLE customer_employer (
+CREATE TABLE employer (
    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
    customer_id UUID NULL,
    name TEXT NULL,
