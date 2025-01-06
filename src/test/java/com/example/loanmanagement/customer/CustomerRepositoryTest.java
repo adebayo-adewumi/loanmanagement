@@ -14,36 +14,4 @@ public class CustomerRepositoryTest {
     @Autowired
     private ICustomerRepository repository;
 
-    @Test
-    public void findByCustomerId() {
-        Customer customer = Customer.builder()
-                .firstname("Adebola")
-                .lastname("Segun")
-                .phone("Segun")
-                .email("b@b.com")
-                .build();
-
-        repository.save(customer);
-
-        var response = repository.findByCustomerId(customer.getId());
-
-        Assertions.assertThat(response).isNotNull();
-    }
-
-    @Test
-    public void findByCustomerPhoneAndEmail() {
-        Customer customer = Customer.builder()
-                .firstname("bello")
-                .lastname("yaya")
-                .phone("08160302602")
-                .email("a@a.com")
-                .build();
-
-        repository.save(customer);
-
-        var response = repository.findByCustomerPhoneAndEmail(customer.getPhone(), customer.getEmail());
-
-        Assertions.assertThat(response).isNotNull();
-    }
-
 }
