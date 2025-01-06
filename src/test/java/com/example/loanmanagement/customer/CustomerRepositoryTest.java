@@ -11,7 +11,4 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 @AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.H2)
 public class CustomerRepositoryTest {
 
-    @Autowired
-    private ICustomerRepository repository;
-
 }
