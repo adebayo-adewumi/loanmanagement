@@ -40,6 +40,28 @@ public class CustomerController {
         return ResponseEntity.ok(response);
     }
 
+    @PostMapping("/contact")
+    public ResponseEntity<GenericResponse> addContact(@RequestBody ContactRequest request) {
+        var response = service.addContacts(request);
+
+        if(response.getCode() != 200) {
+            return ResponseEntity.status(response.getCode()).body(response);
+        }
+
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/employer")
+    public ResponseEntity<GenericResponse> addEmployer(@RequestBody EmployerRequest request) {
+        var response = service.addEmployer(request);
+
+        if(response.getCode() != 200) {
+            return ResponseEntity.status(response.getCode()).body(response);
+        }
+
+        return ResponseEntity.ok(response);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<GenericResponse> delete(@PathVariable UUID id) {
         return ResponseEntity.ok(service.delete(id));
