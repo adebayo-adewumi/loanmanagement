@@ -31,7 +31,7 @@ public class AuthenticationFilter extends OncePerRequestFilter {
             @NonNull FilterChain filterChain
     ) throws ServletException, IOException {
 
-        if (request.getServletPath().contains("/api/v1/customer/login")) {
+        if (request.getServletPath().contains("/api/v1/customer/login") || request.getServletPath().contains("/api/v1/customer/register")) {
             filterChain.doFilter(request, response);
             return;
         }
